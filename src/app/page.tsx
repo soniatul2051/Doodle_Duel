@@ -338,6 +338,15 @@ export default function DoodleDuelPage() {
                 phase={gameState.phase}
                 timerEndsAt={gameState.currentRound.timerEndsAt}
                 totalSeconds={gameState.currentRound.timerTotalSeconds}
+                stealDurationSeconds={gameState.settings.stealDurationSeconds}
+                drawingTeamName={
+                  gameState.teams[gameState.currentRound.drawingTeamIndex]
+                    ?.name || 'Drawing Team'
+                }
+                activeGuessingTeamName={
+                  gameState.teams[gameState.currentRound.activeGuessingTeamIndex]
+                    ?.name || 'Guessing Team'
+                }
                 soundEnabled={gameState.settings.soundEnabled}
                 onTimerExpire={handleTimerExpire}
               />
